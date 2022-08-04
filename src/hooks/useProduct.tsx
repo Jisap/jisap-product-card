@@ -32,17 +32,17 @@ export const useProduct = ( { onChange, product, value = 0, initialValues }:useP
       
     }
     
-    useEffect(() => {
-      isMounted.current = true;                                  // Cambiamos el valor de isMounted a true
-    }, []);
-
+    
     useEffect(() => {                                            // Cada vez que cambie el value del counter se ejecuta este useEffect
       if (!isMounted.current) {                                  // Si el componente no esta montado no hago nada
         return;
       }
-      setCounter(value);                                         // Se actualiza si isMounted.current = true
+      setCounter(value);                                         // Se actualiza el state con el nuevo value
     }, [value]);                                                 // El value que recibo aquí es el nuevo valor que debería tener el state
-
+    
+    useEffect(() => {
+      isMounted.current = true;                                  // Cambiamos el valor de isMounted a true
+    }, []);
 
   return (
     { 
