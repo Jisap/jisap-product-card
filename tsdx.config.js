@@ -6,7 +6,7 @@ module.exports = {
     rollup(config, options) {
         config.plugins = [ 
             postcss({ modules: true }),
-            images({ incude: ['**/*.png', '**/*.jpg'] }),
+            images({ include: ['**/*.png', '**/*.jpg'] }),
             ...config.plugins,    
         ];    
         
